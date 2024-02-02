@@ -42,7 +42,15 @@ class _CategoryNewsState extends State<CategoryNews> {
     return Scaffold(
         appBar:
         AppBar(
-
+          leading: InkWell(
+              onTap: () {
+                Navigator.pop(context);
+              },
+              child: Icon(
+                Icons.arrow_back_outlined,
+                color: Clrs.kWhite,
+                size: 30.sp,
+              )),
           backgroundColor: Clrs.kPrimaryClr,
           shape: OutlineInputBorder(
               borderSide: BorderSide(color: Colors.transparent, width: 3),

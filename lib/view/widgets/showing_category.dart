@@ -24,7 +24,7 @@ class ShowingCategory extends StatelessWidget {
             ));
       },
       child: Padding(
-        padding: EdgeInsets.only(bottom: 8.h),
+        padding: EdgeInsets.symmetric(horizontal: 3.w, vertical: 5.h),
         child: Card(
           elevation: 8,
           shape: OutlineInputBorder(
@@ -40,19 +40,23 @@ class ShowingCategory extends StatelessWidget {
                       topRight: Radius.circular(16)),
                   child: CachedNetworkImage(
                     fit: BoxFit.fill,
-                    height: 230.h,
+                    height: 210.h,
+                    width: MediaQuery.of(context).size.width,
                     imageUrl: image,
                     placeholder: (context, url) =>
                         Center(child: CircularProgressIndicator()),
                     errorWidget: (context, url, error) => Icon(Icons.error),
                   ),
                 ),
+                SizedBox(
+                  height: 5.h,
+                ),
                 Text(
                   title,
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
-                    fontSize: 20.sp,
+                    fontSize: 18.sp,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -62,7 +66,7 @@ class ShowingCategory extends StatelessWidget {
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
                     fontSize: 16.sp,
-                    fontWeight: FontWeight.w400,
+                    fontWeight: FontWeight.w300,
                   ),
                 ),
               ],
